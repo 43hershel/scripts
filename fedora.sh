@@ -1,24 +1,25 @@
 #!/bin/bash
 
 #For unziping files "unzip file.zip -d destination_folder"
+#Pending: .zshrc file, ssh keys
 
 echo "Updating system" 
 # Update packages and system
 sudo dnf update
 
-echo "Installing packages" 
+
 # Install i3 window manager
-sudo pacman -S i3wm 
-sudo pacman -S i3status
+sudo dnf install i3wm 
+sudo dnf install i3status
 
 #Install kitty terminal emulator
-sudo pacman -S kitty 
+sudo dnf install kitty 
 
 #Install feh
-sudo pacman -S feh
+sudo dnf install feh
 
 #Install rofi
-sudo pacman -S rofi 
+sudo dnf install rofi 
 
 echo "Retrieving castro's dotfiles" 
 #Download dotfiles
@@ -27,6 +28,7 @@ git clone https://github.com/43hershel/dotfiles
 echo "Setting up config files"
 #Installing "Oh my Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
 #Move i3 dotfiles to .config directory 
 cd ~/.config/
@@ -42,10 +44,11 @@ unzip kitty-themes.zip -d ~/.config/kitty
 sudo mv kitty.conf theme.conf ~/.config/kitty
 
 #Installing the fonts 
-
+cd ~/dotfiles
+unzip JetBrainsMono-2.304.zip
+mv JetBrainsMono-2.304 /usr/share/fonts
 
 #Move wallpaper to images directory 
 cd ~/dotfiles
 mv pexels-eberhard-grossgasteiger-691668.jpg ~/Imágenes/
-
 
