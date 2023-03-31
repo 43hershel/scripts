@@ -21,6 +21,9 @@ sudo dnf install feh
 #Install rofi
 sudo dnf install rofi 
 
+#Install lxappearance
+sudo dnf install lxappearance
+
 echo "Retrieving castro's dotfiles" 
 #Download dotfiles
 git clone https://github.com/43hershel/dotfiles
@@ -28,7 +31,6 @@ git clone https://github.com/43hershel/dotfiles
 echo "Setting up config files"
 #Installing "Oh my Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 
 #Move i3 dotfiles to .config directory 
 cd ~/.config/
