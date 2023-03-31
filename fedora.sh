@@ -9,7 +9,7 @@ sudo dnf update
 
 
 # Install i3 window manager
-sudo dnf install i3wm 
+sudo dnf install i3
 sudo dnf install i3status
 
 #Install kitty terminal emulator
@@ -24,8 +24,15 @@ sudo dnf install rofi
 #Install lxappearance
 sudo dnf install lxappearance
 
+#Install zsh
+sudo dnf install zsh
+
+#Install syncthing
+sudo dnf install syncthing
+
 echo "Retrieving castro's dotfiles" 
 #Download dotfiles
+cd
 git clone https://github.com/43hershel/dotfiles
 
 echo "Setting up config files"
@@ -35,7 +42,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #Move i3 dotfiles to .config directory 
 cd ~/.config/
 mkdir i3
-cd  ~/dotfiles/i3wm
+cd  ~/dotfiles/i3
 sudo mv config config.save i3status.conf ~/.config/i3
 
 #Move kitty config to .config directory
